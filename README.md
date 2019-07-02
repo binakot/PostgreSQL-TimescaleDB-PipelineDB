@@ -12,7 +12,7 @@ Docker image with:
 Current versions of components:
 * PostgreSQL: **11.3** ([Source docker image](https://store.docker.com/images/postgres))
 * TimescaleDB: **1.3.0** ([Release archive](https://github.com/timescale/timescaledb/releases/tag/1.3.0))
-* TimescaleDB: **1.0.0-13** ([Release archive](https://github.com/pipelinedb/pipelinedb/releases/tag/1.0.0-13))
+* PipelineDB: **1.0.0-13** ([Release archive](https://github.com/pipelinedb/pipelinedb/releases/tag/1.0.0-13))
 
 How to build:
 
