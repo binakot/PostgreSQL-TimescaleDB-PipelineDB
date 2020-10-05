@@ -5,7 +5,7 @@ PostgreSQL + TimescaleDB + PipelineDB docker image 🐘📈🔀
 Based on [Alpine Linux](https://alpinelinux.org).
 
 Docker image with:
-* [PostgreSQL](https://www.postgresql.org/) 
+* [PostgreSQL](https://www.postgresql.org/)
 * [TimescaleDB](https://www.timescale.com/)
 * [PipelineDB](https://www.pipelinedb.com/)
 
@@ -26,7 +26,14 @@ How to run:
 $ docker run -d --name postgres -e POSTGRES_PASSWORD=postgres binakot/postgresql-timescaledb-pipelinedb
 ```
 
----
+You can also build and run the docker image using `docker-compose`
+
+```bash
+# Building Image
+docker-compose build
+# Running the postgres image
+docker-compose up
+```
 
 ## IMPORTANT
 
