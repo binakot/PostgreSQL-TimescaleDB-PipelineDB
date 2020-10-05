@@ -1,12 +1,12 @@
 # https://github.com/docker-library/postgres/blob/master/11/alpine/Dockerfile
-FROM postgres:11.3-alpine
+FROM postgres:11.9-alpine
 
 MAINTAINER Ivan Muratov, binakot@gmail.com
 
-# https://docs.timescale.com/v1.3/getting-started/installation/ubuntu/installation-source
+# https://docs.timescale.com/v1.7/getting-started/installation/ubuntu/installation-source
 # https://github.com/timescale/timescaledb-docker
-ENV TIMESCALEDB_VERSION 1.3.0
-ENV TIMESCALEDB_SHA256 9a773f40c7109694ffb9f2eb2c306e70dd04079c010d276c4d60ae88433a6b4c
+ENV TIMESCALEDB_VERSION 1.7.4
+ENV TIMESCALEDB_SHA256 d0b7a153ff3e02ecf033a869ecdf4286f8610ea76140baa84928fc3a80223e99
 RUN set -ex \
     && apk add --no-cache --virtual .fetch-deps \
         ca-certificates \
@@ -34,7 +34,7 @@ RUN set -ex \
     && rm timescaledb.tar.gz \
     \
     && cd /usr/src/timescaledb \
-    && ./bootstrap -DPROJECT_INSTALL_METHOD="docker" \
+    && ./bootstrap -DPROJECT_INSTALL_METHOD="docker" -DREGRESS_CHECKS=OFF \
     && cd ./build && make install \
     \
     && cd / \
